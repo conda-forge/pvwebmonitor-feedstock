@@ -1,20 +1,20 @@
 {% set name = "pvWebMonitor" %}
-{% set version = "2021.0.1" %}
+{% set version = "2021.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pvWebMonitor-{{ version }}.tar.gz
-  sha256: 8d29fbe1e3415d2ca480ba9a1de6cdfc81bd53caca497d617f386ffa81e62454
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  sha256: 0d9f7bb6ba8082581f858c0b3d02d372a8a7d4b57438c2d97ee7cbd777d3ea15
 
 build:
   entry_points:
     - pvWebMonitor=pvWebMonitor.main:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
